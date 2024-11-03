@@ -19,9 +19,9 @@ class TestBurger:
         assert len(burger.ingredients) > 0
 
     def test_remove_ingredient_deletes_ingredient(self, burger):
-        cheese = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Чеддер", price=15.0)
-        greens = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Салат Айсберг", price=10.0)
-        bacon = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Бекон", price=45.0)
+        cheese = Ingredient(ingredient_type='FILLING', name="Чеддер", price=15.0)
+        greens = Ingredient(ingredient_type='FILLING', name="Салат Айсберг", price=10.0)
+        bacon = Ingredient(ingredient_type='FILLING', name="Бекон", price=45.0)
         burger.add_ingredient(cheese)
         burger.add_ingredient(greens)
         burger.add_ingredient(bacon)
@@ -29,9 +29,9 @@ class TestBurger:
         assert greens not in burger.ingredients and len(burger.ingredients) == 2
 
     def test_move_ingredient_position_changed(self, burger):
-        cheese = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Чеддер", price=15.0)
-        greens = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Салат Айсберг", price=10.0)
-        bacon = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Бекон", price=45.0)
+        cheese = Ingredient(ingredient_type='FILLING', name="Чеддер", price=15.0)
+        greens = Ingredient(ingredient_type='FILLING', name="Салат Айсберг", price=10.0)
+        bacon = Ingredient(ingredient_type='FILLING', name="Бекон", price=45.0)
         burger.add_ingredient(cheese)
         burger.add_ingredient(greens)
         burger.add_ingredient(bacon)
@@ -40,8 +40,8 @@ class TestBurger:
 
     def test_get_price_returns_sum(self, burger):
         burger.bun = Bun(name = "С кунжутом", price = 40.0)
-        cheese = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Чеддер", price=15.0)
-        bacon = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Бекон", price=45.0)
+        cheese = Ingredient(ingredient_type='FILLING', name="Чеддер", price=15.0)
+        bacon = Ingredient(ingredient_type='FILLING', name="Бекон", price=45.0)
         burger.add_ingredient(cheese)
         burger.add_ingredient(bacon)
         final_sum = burger.get_price()
@@ -50,7 +50,7 @@ class TestBurger:
 
     def test_get_receipt_returns_names(self, burger):
         burger.bun = Bun(name = "Бриошь", price = 90.0)
-        cheese = Ingredient(ingredient_type=INGREDIENT_TYPE_FILLING, name="Чеддер", price=15.0)
+        cheese = Ingredient(ingredient_type='FILLING', name="Чеддер", price=15.0)
         burger.add_ingredient(cheese)
         final_sum = burger.get_price()
         receipt = burger.get_receipt()
