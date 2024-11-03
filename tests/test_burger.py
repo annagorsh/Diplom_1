@@ -1,7 +1,6 @@
+import pytest
 from praktikum.bun import Bun
 from praktikum.ingredient import Ingredient
-from praktikum.ingredient_types import *
-
 
 class TestBurger:
 
