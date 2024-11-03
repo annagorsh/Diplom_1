@@ -14,7 +14,7 @@ class TestBurger:
         assert burger.bun == bun
 
     def test_add_ingredient_ingredient_appended(self, burger):
-        ingredient = Ingredient(ingredient_type=INGREDIENT_TYPE_SAUCE, name = "Шрирача", price = 30.0)
+        ingredient = Ingredient(ingredient_type='SAUCE', name = "Шрирача", price = 30.0)
         burger.add_ingredient(ingredient)
         assert len(burger.ingredients) > 0
 
